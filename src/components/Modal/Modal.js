@@ -30,7 +30,7 @@ render(){
     return createPortal(
         <div className={s.Overlay} onClick = {this.overlayClick}>
             <div className={s.Modal} >
-                <img src={this.props.image} alt="" />
+                <img src={this.props.image.largeImageURL} alt={this.props.image.tags} />
             </div>
         </div>, modalRoot
     )

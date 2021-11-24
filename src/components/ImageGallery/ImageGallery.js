@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import s from './ImageGallery.module.css'
 
 export default function ImageGallery({children, onClick}){
@@ -6,4 +7,8 @@ export default function ImageGallery({children, onClick}){
             {children}
         </ul>
     )
+}
+
+ImageGallery.propTypes = {
+    onClick: PropTypes.func
 }

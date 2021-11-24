@@ -16,7 +16,7 @@ state={
   pageNumber: 1,
   totalPages: null,
   showModal: false,
-  modalImage: null,
+  modalImage: [],
   showLoading: false
 }
 
@@ -62,7 +62,7 @@ renderModalImage = (event) => {
   const elemNumber = this.state.searchResults.map(item => {
     return item.id
   }).indexOf(Number(event.target.id))
-  const elem = this.state.searchResults[elemNumber].largeImageURL
+  const elem = this.state.searchResults[elemNumber]
   this.setState({
     modalImage: elem,
     showModal: true
