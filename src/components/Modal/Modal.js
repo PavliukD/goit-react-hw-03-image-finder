@@ -28,8 +28,8 @@ closeModal = (event) => {
 
 render(){
     return createPortal(
-        <div className={s.overlay} >
-            <div className="modal" onClick = {this.overlayClick}>
+        <div className={s.Overlay} onClick = {this.overlayClick}>
+            <div className={s.Modal} >
                 <img src={this.props.image} alt="" />
             </div>
         </div>, modalRoot

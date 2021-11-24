@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import Loader from "react-loader-spinner"
-import './App.css';
+import s from './App.module.css';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Searchbar from './components/Searchbar/Searchbar';
 import ImageGallery from './components/ImageGallery/ImageGallery';
@@ -77,21 +77,21 @@ closeModal = () => {
 
   render(){
     return(
-      <>
+      <div className = {s.App}> 
         <Searchbar onSubmit = {this.onSubmitForm}/>
         <ImageGallery onClick = {this.renderModalImage}>
           <ImageGalleryItem array = {this.state.searchResults} />
         </ImageGallery>
         <Loader
-          type="Cercles"
+          type="Circles"
           color="#00BFFF"
           height={100}
           width={100}
-          visible={this.state.showLoading} //3 secs
+          visible={this.state.showLoading}
         />
         {this.state.totalPages && <Button onClick = {this.loadMoreImages}/>}
         {this.state.showModal && <Modal image = {this.state.modalImage} closeModal = {this.closeModal}/>}
-      </>
+      </div>
     )
   };
 }
